@@ -1,3 +1,4 @@
+import { Search } from 'lucide-react'
 import React, { useEffect, useState } from 'react'
 import cardData from '../cardData.json'
 
@@ -56,12 +57,45 @@ const Card = ({ imgSrc, title, description }) => {
 }
 
 const CardList = () => {
+	const [searchQuery, setSearchQuery] = useState('')
+	const [filteredCards, setFilteredCards] = useState(cardData)
+
+	const handleSearchInputChange = event => {
+		setSearchQuery(event.target.value)
+	}
+
+	useEffect(() => {
+		const filtered = cardData.filter(card => {
+			const { title, description } = card
+			const normalizedQuery = searchQuery.trim().toLowerCase()
+			return (
+				title.toLowerCase().includes(normalizedQuery) ||
+				description.toLowerCase().includes(normalizedQuery)
+			)
+		})
+		setFilteredCards(filtered)
+	}, [searchQuery])
+
 	return (
-		<div className='flex flex-wrap justify-center gap-4'>
-			{cardData.map(card => (
-				<Card key={card.id} {...card} />
-			))}
-		</div>
+		<>
+			<div className='pb-4'>
+				<label className='input input-bordered flex items-center gap-2'>
+					<input
+						type='text'
+						className='grow'
+						placeholder='Search'
+						value={searchQuery}
+						onChange={handleSearchInputChange}
+					/>
+					<Search size={16} />
+				</label>
+			</div>
+			<div className='flex flex-wrap justify-center gap-4'>
+				{filteredCards.map(card => (
+					<Card key={card.id} {...card} />
+				))}
+			</div>
+		</>
 	)
 }
 

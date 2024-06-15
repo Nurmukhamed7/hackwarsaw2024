@@ -86,9 +86,7 @@ const SideBar = () => {
 				<main className='relative flex-1 overflow-y-auto focus:outline-none'>
 					<div className='py-6'>
 						<div className='px-4 mx-auto max-w-7xl sm:px-6 md:px-8'>
-							<h1 className='text-lg text-neutral-600'>
-								Here is where you put your stuff
-							</h1>
+							<h1 className='text-lg text-neutral-600'></h1>
 						</div>
 						<div className='px-4 mx-auto max-w-7xl sm:px-6 md:px-8'>
 							{/* Put your content here */}
