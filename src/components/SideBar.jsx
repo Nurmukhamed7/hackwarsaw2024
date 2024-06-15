@@ -1,4 +1,5 @@
 import { BedDouble, DiscAlbum, HardHat, Lamp, Sofa, Tv } from 'lucide-react'
+import SwapNovo from '../assets/SwapNovo.svg'
 import CardList from './CardList'
 
 const navigationItems = [
@@ -17,13 +18,10 @@ const SideBar = () => {
 				<div className='flex flex-col w-64'>
 					<div className='flex flex-col flex-grow pt-5 overflow-y-auto bg-white border-r border-gray-50'>
 						<div className='flex flex-col items-center flex-shrink-0 px-4'>
-							<a
-								className='px-8 text-left focus:outline-none'
-								href='/groups/sidebar/'
-							>
+							<a className='px-8 text-left focus:outline-none' href='/'>
 								<img
 									className='block tracking-tighter transition cursor-pointer hover:text-gray-900 pt-5'
-									src='../../src/assets/SwapNovo.svg'
+									src={SwapNovo}
 									alt='SwapNovoLogo'
 								/>
 							</a>
