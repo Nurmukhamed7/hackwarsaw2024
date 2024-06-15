@@ -23,8 +23,8 @@ const SideBar = () => {
 							>
 								<img
 									className='block tracking-tighter transition cursor-pointer hover:text-gray-900 pt-5'
-									src='/src/assets/SwapNovo.svg'
-									alt=''
+									src='../../src/assets/SwapNovo.svg'
+									alt='SwapNovoLogo'
 								/>
 							</a>
 							<button className='hidden rounded-lg focus:outline-none focus:shadow-outline'>
