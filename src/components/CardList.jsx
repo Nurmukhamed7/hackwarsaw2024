@@ -2,7 +2,7 @@ import { Search } from 'lucide-react'
 import React, { useEffect, useState } from 'react'
 import cardData from '../cardData.json'
 
-const Card = ({ imgSrc, title, description }) => {
+const Card = ({ imgSrc, title, description, region }) => {
 	const initialCountdown = 24 * 60 * 60 // 24 hours in seconds
 	const [countdown, setCountdown] = useState(null)
 	const [isCountingDown, setIsCountingDown] = useState(false)
@@ -40,12 +40,16 @@ const Card = ({ imgSrc, title, description }) => {
 			<div className='card-body'>
 				<h2 className='card-title'>{title}</h2>
 				<p>{description}</p>
-				<div className='card-actions justify-end'>
+				<div className='font-extrabold card-actions justify-end items-center'>
+					<p>{region}</p>
 					<button
 						className={`btn ${isCountingDown ? 'btn-warning' : ''}`}
 						onClick={handleBuyNowClick}
 						disabled={isCountingDown}
-						style={{ backgroundColor: '#25CBCB', color: 'white' }}
+						style={{
+							backgroundColor: isCountingDown ? '#FFB566' : '#25CBCB',
+							color: 'white',
+						}}
 					>
 						{isCountingDown
 							? `Reserved till ${formatTime(countdown)}`
@@ -60,36 +64,56 @@ const Card = ({ imgSrc, title, description }) => {
 const CardList = () => {
 	const [searchQuery, setSearchQuery] = useState('')
 	const [filteredCards, setFilteredCards] = useState(cardData)
+	const [selectedRegion, setSelectedRegion] = useState('')
 
 	const handleSearchInputChange = event => {
 		setSearchQuery(event.target.value)
 	}
 
+	const handleRegionChange = event => {
+		setSelectedRegion(event.target.value)
+	}
+
 	useEffect(() => {
 		const filtered = cardData.filter(card => {
-			const { title, description } = card
+			const { title, description, region } = card
 			const normalizedQuery = searchQuery.trim().toLowerCase()
-			return (
+			const matchesQuery =
 				title.toLowerCase().includes(normalizedQuery) ||
 				description.toLowerCase().includes(normalizedQuery)
-			)
+			const matchesRegion = selectedRegion === '' || region === selectedRegion
+			return matchesQuery && matchesRegion
 		})
 		setFilteredCards(filtered)
-	}, [searchQuery])
+	}, [searchQuery, selectedRegion])
+
+	const uniqueRegions = [...new Set(cardData.map(card => card.region))]
 
 	return (
 		<>
-			<div className='pb-4'>
-				<label className='input input-bordered flex items-center gap-2'>
+			<div className='pb-4 flex gap-2'>
+				<div className='flex flex-grow items-center gap-2 input input-bordered'>
 					<input
 						type='text'
-						className='grow'
-						placeholder='Search'
+						className='flex-grow'
+						placeholder='What are you looking for?'
 						value={searchQuery}
 						onChange={handleSearchInputChange}
 					/>
 					<Search size={16} />
-				</label>
+				</div>
+				<select
+					className='select select-bordered w-full max-w-xs'
+					value={selectedRegion}
+					onChange={handleRegionChange}
+				>
+					<option value=''>Select District</option>
+					{uniqueRegions.map(region => (
+						<option key={region} value={region}>
+							{region}
+						</option>
+					))}
+				</select>
 			</div>
 			<div className='flex flex-wrap justify-center gap-4'>
 				{filteredCards.map(card => (
