@@ -21,9 +21,11 @@ const SideBar = () => {
 								className='px-8 text-left focus:outline-none'
 								href='/groups/sidebar/'
 							>
-								<h2 className='block p-2 text-xl font-medium tracking-tighter text-gray-900 transition duration-500 ease-in-out transform cursor-pointer hover:text-gray-900'>
-									wickedblocks
-								</h2>
+								<img
+									className='block tracking-tighter transition cursor-pointer hover:text-gray-900 pt-5'
+									src='/src/assets/SwapNovo.svg'
+									alt=''
+								/>
 							</a>
 							<button className='hidden rounded-lg focus:outline-none focus:shadow-outline'>
 								<svg

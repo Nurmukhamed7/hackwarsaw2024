@@ -42,9 +42,10 @@ const Card = ({ imgSrc, title, description }) => {
 				<p>{description}</p>
 				<div className='card-actions justify-end'>
 					<button
-						className={`btn ${isCountingDown ? 'btn-warning' : 'btn-primary'}`}
+						className={`btn ${isCountingDown ? 'btn-warning' : ''}`}
 						onClick={handleBuyNowClick}
 						disabled={isCountingDown}
+						style={{ backgroundColor: '#25CBCB', color: 'white' }}
 					>
 						{isCountingDown
 							? `Reserved till ${formatTime(countdown)}`
