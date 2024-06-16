@@ -12,6 +12,7 @@ Our app provides an easy way for people to give away used items. By using a rese
 - **Vite**: A fast build tool that focuses on frontend development.
 - **Tailwind CSS**: A utility-first CSS framework for rapidly building custom designs.
 - **DaisyUI**: A Tailwind CSS component library.
+- **Vercel**: A cloud platform for static sites and serverless functions that enables seamless deployment and hosting.
 
 ## Installation
 
