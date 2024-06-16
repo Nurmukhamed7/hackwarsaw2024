@@ -35,7 +35,7 @@ const Card = ({ imgSrc, title, description, region }) => {
 	return (
 		<div className='card card-compact w-96 bg-base-100 shadow-xl'>
 			<figure>
-				<img src={imgSrc} alt={title} />
+				<img className='max-h-80 min-h-80' src={imgSrc} alt={title} />
 			</figure>
 			<div className='card-body'>
 				<h2 className='card-title'>{title}</h2>

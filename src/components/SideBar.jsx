@@ -17,8 +17,8 @@ const SideBar = () => {
 			<div className='hidden md:flex md:flex-shrink-0'>
 				<div className='flex flex-col w-64'>
 					<div className='flex flex-col flex-grow pt-5 overflow-y-auto bg-white border-r border-gray-50'>
-						<div className='flex flex-col items-center flex-shrink-0 px-4'>
-							<a className='px-8 text-left focus:outline-none' href='/'>
+						<div className='flex flex-col items-center flex-shrink-0 px-4 '>
+							<a className='px-4 text-left focus:outline-none' href='/'>
 								<img
 									className='block tracking-tighter transition cursor-pointer hover:text-gray-900 pt-5'
 									src={SwapNovo}
@@ -44,7 +44,7 @@ const SideBar = () => {
 								</svg>
 							</button>
 						</div>
-						<div className='flex flex-col flex-grow px-4 mt-5'>
+						<div className='flex flex-col  px-4 mt-5 '>
 							<nav className='flex-1 space-y-1 bg-white'>
 								<ul>
 									{navigationItems.map((item, index) => (
@@ -61,7 +61,7 @@ const SideBar = () => {
 								</ul>
 							</nav>
 						</div>
-						<div className='flex flex-shrink-0 p-4 px-4 bg-gray-100'>
+						<div className='flex-shrink-0 p-4 px-4  fixed bottom-0'>
 							<a href='#' className='flex-shrink-0 block w-full group'>
 								<div className='flex items-center'>
 									<div>
@@ -92,7 +92,7 @@ const SideBar = () => {
 							{/* Put your content here */}
 							<CardList />
 							<div className='py-4'>
-								<div className='rounded-lg bg-gray-50 h-96'></div>
+								{/* <div className='rounded-lg bg-gray-50 h-96'></div> */}
 							</div>
 							{/* Do not cross the closing tag underneath this comment */}
 						</div>
