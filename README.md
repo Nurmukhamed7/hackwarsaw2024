@@ -1,6 +1,6 @@
-# HackWarsaw 2024 Project
+# Swapnovo Project
 
-Welcome to the HackWarsaw 2024 project repository! This project was developed during the HackWarsaw 2024 hackathon.
+Welcome to Swapnovo project repository! This project was developed during the HackWarsaw 2024 hackathon.
 
 ## Project Description
 
