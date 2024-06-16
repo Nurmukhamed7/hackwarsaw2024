@@ -19,7 +19,7 @@ Our app provides an easy way for people to give away used items. By using a rese
 To run this project locally, follow these steps:
 
 1. **Clone the repository:**
-   git clone https://github.com/Nurmukhamed7/hackwarsaw2024.git
+   git clone https://github.com/Nurmukhamed7/swapnovo
    cd hackwarsaw2024
 
 2. **Install dependencies:**
