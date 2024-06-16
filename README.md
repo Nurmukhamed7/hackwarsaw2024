@@ -20,7 +20,7 @@ To run this project locally, follow these steps:
 
 1. **Clone the repository:**
    git clone https://github.com/Nurmukhamed7/swapnovo
-   cd hackwarsaw2024
+   cd swapnovo
 
 2. **Install dependencies:**
    npm install
